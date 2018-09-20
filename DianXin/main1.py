@@ -2,6 +2,7 @@ from DianXin import readFile
 from DianXin import C4_5
 import time
 from sklearn import tree
+from sklearn import ensemble
 from comment import util
 import csv
 import graphviz

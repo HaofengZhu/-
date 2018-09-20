@@ -7,7 +7,7 @@ last_day= util.Util.dateToday('20180316')
 days_to_train=last_day-first_day+1
 print("导入数据完毕")
 begin_time=time.time()
-last_week_begin= util.Util.dateToday('20180123')
+last_week_begin= util.Util.dateToday('20180116')
 last_week_end= util.Util.dateToday('20180312')
 sku=""
 sku_num={}
@@ -18,7 +18,7 @@ for index in range(len(data)):
         y=0
     #一种商品扫描结束
     if sku!=data[index][2] or index==len(data)-1:
-        sku_num[sku]=util.Util.rounding(y/7)
+        sku_num[sku]=util.Util.rounding(y/8)
         #初始化
         sku = data[index][2]
         y=0
