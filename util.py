@@ -1,7 +1,7 @@
 # python3
-import numpy as np
+# import numpy as np
 import csv
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import time
 import readFile
 class Util :
