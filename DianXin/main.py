@@ -1,10 +1,10 @@
 from DianXin import readFile
-from DianXin import C4_5
 import time
 from sklearn import ensemble
 from comment import util
 import csv
-import graphviz
+from sklearn.kernel_ridge import KernelRidge
+# import graphviz
 
 begin_time=time.time()
 #读取数据
@@ -26,10 +26,9 @@ for line in tData:
 
 print("读取数据完毕")
 
-GBC=ensemble.GradientBoostingClassifier()
-GBC.fit(data,target)
-result=GBC.predict(tData)
-
+clf = KernelRidge(alpha=1.0)
+clf.fit(data, target)
+result=clf.predict(tData)
 # clf = tree.DecisionTreeClassifier()
 # clf = clf.fit(trainData, y)
 # result=clf.predict(testData)

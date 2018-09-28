@@ -49,11 +49,11 @@ class ReadFile():
     def read_goodsale():
         data = []
         try:
-            with open('../../GongYingLian/goodsaleSortAndCancel.csv') as f:
+            with open('../../GongYingLian/goodsaleSort.csv') as f:
                 reader = csv.reader(f, delimiter=',')
                 for row in reader:
                     temp = []
-                    temp.append(time.mktime(time.strptime(row[0], "%Y%m%d")))
+                    temp.append(row[0])
                     temp.append(row[1])
                     temp.append(row[2])
                     temp.append(int(row[3]))
@@ -147,6 +147,7 @@ class ReadFile():
             with open('../../GongYingLian/result/result_v' + str(util.Util.getNewVersion('GongYingLianresult')) + '.csv', 'w', newline='') as f:
                 writer = csv.writer(f, dialect='excel')
                 writer.writerow(['sku_id', 'week1', 'week2', 'week3', 'week4', 'week5'])
+                print("输出中")
                 for sku in sortSKU:
                     writer.writerow(
                         [sku, result[sku][0], result[sku][1], result[sku][2], result[sku][3], result[sku][4]])
